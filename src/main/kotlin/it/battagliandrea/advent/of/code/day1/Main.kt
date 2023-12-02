@@ -32,12 +32,42 @@ In this example, the calibration values of these four lines are 12, 38, 15, and 
 Adding these together produces 142.
 
 Consider your entire calibration document. What is the sum of all the calibration values?
+
+--- Part Two ---
+Your calculation isn't quite right.
+It looks like some of the digits are actually spelled out with letters:
+one, two, three, four, five, six, seven, eight, and nine also count as valid "digits".
+
+Equipped with this new information,
+you now need to find the real first and last digit on each line. For example:
+
+two1nine
+eightwothree
+abcone2threexyz
+xtwone3four
+4nineeightseven2
+zoneight234
+7pqrstsixteen
+In this example, the calibration values are 29, 83, 13, 24, 42, 14, and 76. Adding these together produces 281.
+
+What is the sum of all of the calibration values?
 */
 
 fun main(args: Array<String>) {
     println("Day 1 - Puzzle 1")
 
+    part1()
+    part2()
+}
+
+private fun part1(){
     val calibrationDocument = createFromFileName("puzzle_input_01.txt")
-    val calibrationSum = calibrationDocument.calibrationSum()
+    val calibrationSum = calibrationDocument.calibrationSumV1()
+    println(calibrationSum)
+}
+
+private fun part2(){
+    val calibrationDocument = createFromFileName("puzzle_input_01_2.txt")
+    val calibrationSum = calibrationDocument.calibrationSumV2()
     println(calibrationSum)
 }

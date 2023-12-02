@@ -5,8 +5,12 @@ import it.battagliandrea.advent.of.code.utils.readLines
 data class CalibrationDocument (
     val lines: List<CalibrationLine>
 ){
-    fun calibrationSum() = lines
-        .map(CalibrationLine::getCalibrationValue)
+    fun calibrationSumV1() = lines
+        .map(CalibrationLine::getCalibrationValueV1)
+        .sum()
+
+    fun calibrationSumV2() = lines
+        .map(CalibrationLine::getCalibrationValueV2)
         .sum()
 
     companion object {
