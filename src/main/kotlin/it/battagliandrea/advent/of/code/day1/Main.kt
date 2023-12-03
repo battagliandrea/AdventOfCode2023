@@ -54,7 +54,7 @@ What is the sum of all of the calibration values?
 */
 
 fun main(args: Array<String>) {
-    println("Day 1 - Puzzle 1")
+    println("Day 1")
 
     part1()
     part2()
