@@ -42,6 +42,13 @@ data class Game(
                && !sets.any{ it.greenNum > GREEN_MAX }
                && !sets.any{ it.blueNum > BLUE_MAX }
 
+    fun getPower(): Int {
+        val maxRed = sets.maxOfOrNull { it.redNum } ?: 0
+        val maxGreen = sets.maxOfOrNull { it.greenNum } ?: 0
+        val maxBlue = sets.maxOfOrNull { it.blueNum } ?: 0
+        return maxRed * maxBlue * maxGreen
+    }
+
     companion object {
         const val RED_MAX = 12
         const val GREEN_MAX = 13
