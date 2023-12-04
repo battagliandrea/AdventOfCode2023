@@ -58,4 +58,7 @@ private fun part1(){
 }
 
 private fun part2(){
+    val engine = Engine.createFromFileName("puzzle_input_03_2.txt")
+    val output = engine.getGearRatio().sum()
+    println(output)
 }

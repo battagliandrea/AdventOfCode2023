@@ -28,6 +28,18 @@ data class Engine(
     fun getPartNumbers() = numbers
         .filter { number -> number.neighboursAny(symbols) }
 
+    fun getGearRatio() = symbols
+        .filter { it.value == '*' }
+        .map { symbol ->
+            val neighbours = numbers.filter { it.neighbours(symbol) }
+            if (neighbours.size == 2) {
+                val (a, b) = neighbours
+                a.value.toInt() * b.value.toInt()
+            } else {
+                0
+            }
+        }
+
     companion object {
 
         fun createFromFileName(fileName: String) : Engine {
